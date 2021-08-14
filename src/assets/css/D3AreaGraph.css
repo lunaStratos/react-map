@@ -1,0 +1,25 @@
+.grid line {
+    stroke: lightgrey;
+    stroke-opacity: 0.7;
+}
+.lineAreaChart1 {
+    fill: #CDE4FF;
+    stroke: steelblue;
+    stroke-width: 1.5px;
+    
+}
+.lineAreaChart1:hover {
+    stroke: black;
+    stroke-width: 3px;
+}
+.toolTip {
+    position: absolute;
+    border: 1px solid;
+    border-radius: 4px 4px 4px 4px;
+    background: rgba(0, 0, 0, 0.8);
+    color : white;
+    padding: 5px;
+    text-align: center;
+    font-size: 12px;
+    min-width: 30px;
+}
