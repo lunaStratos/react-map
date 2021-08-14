@@ -4,23 +4,29 @@
 
 # D3AreaGraph
 
-![D3 Graph]](./img/graph.gif)
+<p align="center">
+<img src="./img/graph.gif"/>
+</p>
 
 D3를 이용한 이동형 선택 그래프 그림  
 
 
 # GoogleMapGrid
 
-![D3 Graph]](./img/google.gif)
+<p align="center">
+<img src="./img/google.gif"/>
+</p>
 
-turf.squareGrid로 특정 지역의 10M 단위로 Grid를 그리고
+[turf](https://turfjs.org/) .squareGrid로 특정 지역의 10M 단위로 Grid를 그리고
 선택, 해제 등의 작업을 함 
 
 # MapboxGrid
 
-![D3 Graph]](./img/mapbox.gif)
+<p align="center">
+<img src="./img/mapbox.gif"/>
+</p>
 
-turf.squareGrid로 특정 지역의 10M 단위로 Grid를 그리고
+[turf](https://turfjs.org/).squareGrid로 특정 지역의 10M 단위로 Grid를 그리고
 선택, 해제 등의 작업을 함 
 
 # GoogleMapPlusCodeGrid
