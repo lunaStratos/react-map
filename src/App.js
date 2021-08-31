@@ -5,6 +5,8 @@ import Home from './comp/Home';
 import GoogleMapPlusCodeGrid from './comp/GoogleMapPlusCodeGrid';
 import MapboxGrid from './comp/MapboxGrid';
 import D3AreaGraph from './comp/D3AreaGraph';
+import MapboxGridForGooglePlus from './comp/MapboxGridForGooglePlus';
+
 
 function App() {
   return (
@@ -14,8 +16,9 @@ function App() {
       <Route path="/mapboxGrid" exact={true} component={MapboxGrid} />
       <Route path="/googleMapPlusCodeGrid"  exact={true} component={GoogleMapPlusCodeGrid} />
       <Route path="/d3AreaGraph"  exact={true} component={D3AreaGraph} />
+      <Route path="/MapboxGridForGooglePlus"  exact={true} component={MapboxGridForGooglePlus} />
 
-
+      
     </div>
   );
 }

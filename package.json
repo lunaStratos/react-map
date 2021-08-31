@@ -15,7 +15,6 @@
     "d3": "7.0.0",
     "dotenv": "10.0.0",
     "google-map-react": "2.1.10",
-    "google-maps-react": "2.0.6",
     "mapbox-gl": "2.4.0",
     "nw-react-slider": "2.0.1",
     "react": "^17.0.2",
