@@ -17,7 +17,10 @@ const Home = () => {
             <Link to="/d3AreaGraph"> D3AreaGraph</Link> - D3 Graph 바
             <p></p>
             <Link to="/MapboxGridForGooglePlus"> MapboxGridForGooglePlus</Link> - 맵박스, 구글 플러스 코드 적용
-
+            <p></p>
+            <Link to="/MapboxPoi"> MapboxPoi</Link> - 맵박스, poi 정보 콘솔
+            
+            
             
         </div>
     );
