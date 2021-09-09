@@ -73,7 +73,9 @@ export default function MapboxGrid(props) {
             var featureslanduse = map.current.queryRenderedFeatures(e.point, { layers: ['landuse'] });
             var featureswaterway = map.current.queryRenderedFeatures(e.point, { layers: ['waterway'] });
             var featuresplacelabel = map.current.queryRenderedFeatures(e.point, { layers: ['settlement-label'] });
-            var naturalLabel = map.current.queryRenderedFeatures(e.point, { layers: ['natural-label'] });
+            var naturalLineLabel = map.current.queryRenderedFeatures(e.point, { layers: ['natural-line-label'] });
+            var naturalPointLabel = map.current.queryRenderedFeatures(e.point, { layers: ['natural-point-label'] });
+
             //https://docs.mapbox.com/vector-tiles/reference/mapbox-streets-v8/#natural_label
 
 
@@ -87,7 +89,9 @@ export default function MapboxGrid(props) {
             console.log('landuse', featureslanduse);
             console.log('waterway', featureswaterway);
             console.log('placelabel', featuresplacelabel);
-            console.log('naturalLabel', naturalLabel);
+            console.log('naturalLineLabel', naturalLineLabel);
+            console.log('naturalPointLabel', naturalPointLabel);
+
             console.log('Water', featuresWater);
             console.log('map.getStyle().layers', map.current.getStyle().layers);
 
