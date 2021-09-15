@@ -18,7 +18,11 @@ export default function MapboxGrid(props) {
     const [start, setStart] = useState(false);
     const [selectPoint, setSelectPoint] = useState();
     const [selectMultiGrid, setSelectMultiGrid] = useState([]);
-    const [count, setCount] = useState(0);
+    const [resultData, setResultData] = useState({
+        water : "",
+        landuse : "",
+        waterway : "",
+    });
 
     const initMap = () =>{
         if (map.current) return;
@@ -72,9 +76,17 @@ export default function MapboxGrid(props) {
             var featuresPoi_label = map.current.queryRenderedFeatures(e.point, { layers: ['poi-label'] });
             var featureslanduse = map.current.queryRenderedFeatures(e.point, { layers: ['landuse'] });
             var featureswaterway = map.current.queryRenderedFeatures(e.point, { layers: ['waterway'] });
-            var featuresplacelabel = map.current.queryRenderedFeatures(e.point, { layers: ['settlement-label'] });
+            
+            var placelabel = map.current.queryRenderedFeatures(e.point, { layers: ['place-label'] });
+            var settleLabel = map.current.queryRenderedFeatures(e.point, { layers: ['settlement-label'] });
+            var settleSubLabel = map.current.queryRenderedFeatures(e.point, { layers: ['settlement-subdivision-label'] });
+            var countryLabel = map.current.queryRenderedFeatures(e.point, { layers: ['country-label'] });
+            
+            
             var naturalLineLabel = map.current.queryRenderedFeatures(e.point, { layers: ['natural-line-label'] });
             var naturalPointLabel = map.current.queryRenderedFeatures(e.point, { layers: ['natural-point-label'] });
+            var naturalLabel = map.current.queryRenderedFeatures(e.point, { layers: ['natural-level'] });
+            var naturalLevel = map.current.queryRenderedFeatures(e.point, { layers: ['natural-label'] });
 
             //https://docs.mapbox.com/vector-tiles/reference/mapbox-streets-v8/#natural_label
 
@@ -84,16 +96,31 @@ export default function MapboxGrid(props) {
              * isEmpty or featuresBuilding[0].properties
              *
              */
-            console.log('featuresBuilding', featuresBuilding);
-            console.log('featuresPoi_label', featuresPoi_label);
-            console.log('landuse', featureslanduse);
-            console.log('waterway', featureswaterway);
-            console.log('placelabel', featuresplacelabel);
+            // console.log('featuresBuilding', featuresBuilding);
+            // console.log('featuresPoi_label', featuresPoi_label);
+            //console.log('placelabel', featuresplacelabel);
             console.log('naturalLineLabel', naturalLineLabel);
             console.log('naturalPointLabel', naturalPointLabel);
-
-            console.log('Water', featuresWater);
+            console.log('naturalLabel', naturalLabel);
+            console.log('naturalLevel', naturalLevel);
             console.log('map.getStyle().layers', map.current.getStyle().layers);
+            console.log('placelabel', placelabel); // https://docs.mapbox.com/vector-tiles/reference/mapbox-streets-v8/
+
+            console.log('settleLabel', settleLabel);
+            console.log('settleSubLabel', settleSubLabel);
+            console.log('countryLabel', countryLabel);
+
+            
+
+            console.log("물 여부 데이터", featuresWater.length === 0 ? "땅" : "물");
+            console.log('Landuse 데이터', featureslanduse.length === 0 ? "데이터없음" : featureslanduse[0].properties.type);
+            console.log('waterway 데이터', featureswaterway.length === 0 ? "데이터없음" : featureswaterway[0].properties.type);
+            setResultData({
+                water : featuresWater.length === 0 ? "땅" : "물",
+                landuse : featureslanduse.length === 0 ? "데이터없음" : featureslanduse[0].properties.type,
+                waterway : featureswaterway.length === 0 ? "데이터없음" : featureswaterway[0].properties.type,
+            })
+
 
 
         }
@@ -166,15 +193,11 @@ export default function MapboxGrid(props) {
             <div className="map_bak_layer">
                 <div>
                     <div>
-                        <button onClick={() => {
-                            setSelectMultiGrid([]);
-                        }}>
-                            선택 초기화
-                        </button>
+                    landuse: {resultData.landuse} | landuse: {resultData.water} | waterway: {resultData.waterway} 
                     </div>
-                    <div className="sidebar">
+                    {/* <div className="sidebar">
                         Longitude: {lng} | Latitude: {lat} | Zoom: {zoom} | click : {flag+""}
-                    </div>
+                    </div> */}
                     <div ref={mapContainer} className="map-container" style={{height: '100vh'}} />
                 </div>
             </div>
