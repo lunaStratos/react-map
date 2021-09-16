@@ -87,6 +87,7 @@ export default function MapboxGrid(props) {
             var naturalPointLabel = map.current.queryRenderedFeatures(e.point, { layers: ['natural-point-label'] });
             var naturalLabel = map.current.queryRenderedFeatures(e.point, { layers: ['natural-level'] });
             var naturalLevel = map.current.queryRenderedFeatures(e.point, { layers: ['natural-label'] });
+            var testmodule = map.current.queryRenderedFeatures(e.point, { layers: ['landcover'] });
 
             //https://docs.mapbox.com/vector-tiles/reference/mapbox-streets-v8/#natural_label
 
@@ -109,8 +110,12 @@ export default function MapboxGrid(props) {
             console.log('settleLabel', settleLabel);
             console.log('settleSubLabel', settleSubLabel);
             console.log('countryLabel', countryLabel);
-
             
+            let result = "";
+            map.current.getStyle().layers.map(item =>{
+                const temp1 = map.current.queryRenderedFeatures(e.point, { layers: [item.id] });
+                result += temp1.length === 0 ? "" : item.id +">" +temp1[0].properties.type + " | ";
+            })
 
             console.log("물 여부 데이터", featuresWater.length === 0 ? "땅" : "물");
             console.log('Landuse 데이터', featureslanduse.length === 0 ? "데이터없음" : featureslanduse[0].properties.type);
@@ -119,6 +124,7 @@ export default function MapboxGrid(props) {
                 water : featuresWater.length === 0 ? "땅" : "물",
                 landuse : featureslanduse.length === 0 ? "데이터없음" : featureslanduse[0].properties.type,
                 waterway : featureswaterway.length === 0 ? "데이터없음" : featureswaterway[0].properties.type,
+                testmodule: result
             })
 
 
@@ -193,7 +199,10 @@ export default function MapboxGrid(props) {
             <div className="map_bak_layer">
                 <div>
                     <div>
-                    landuse: {resultData.landuse} | landuse: {resultData.water} | waterway: {resultData.waterway} 
+                    landuse: {resultData.landuse} 
+                    <p>
+                    testmodule: {resultData.testmodule} 
+                    </p>
                     </div>
                     {/* <div className="sidebar">
                         Longitude: {lng} | Latitude: {lat} | Zoom: {zoom} | click : {flag+""}
