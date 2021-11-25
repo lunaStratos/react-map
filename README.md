@@ -35,6 +35,33 @@ D3를 이용한 이동형 선택 그래프 그림
 19레벨만 표시(20레벨 부터는 다른 그리드에 겹침 문제로 안됨)
 
 
+# MapMapbox
+
+<p align="center">
+<img src="./img/mapSelectAni.gif"/>
+</p>
+
+[tilebelt](https://github.com/mapbox/tilebelt/)를 이용하여 10M 단위로 맵을 Tile을 그릴수있음.
+
+장점
+ - 백엔드에 데이터 의지하지 않을수있음 (데이터 이슈없음)
+ - 프론트 단에서 모든게 처리 
+
+기능 : 10M 단위로 선택, 해제, 그룹타일 선택 등의 작업이 가능.
+ 
+
+## Tile 그리는 이론
+
+ - https://wiki.openstreetmap.org/wiki/Slippy_map_tilenames
+
+<p align="center">
+<a href src="./pds/tilebelt.pptx"/>
+
+<img src="./pds/tilebelt/tilebelt_1.png"/>
+<img src="./pds/tilebelt/tilebelt_2.png"/>
+</p>
+
+
 # GoogleMapPlusCodeGrid
 
 

@@ -19,6 +19,9 @@ const Home = () => {
             <Link to="/MapboxGridForGooglePlus"> MapboxGridForGooglePlus</Link> - 맵박스, 구글 플러스 코드 적용
             <p></p>
             <Link to="/MapboxPoi"> MapboxPoi</Link> - 맵박스, poi 정보 콘솔
+
+            <p></p>
+            <Link to="/MapMapbox"> MapMapbox</Link> - 맵박스, 박스선텍, 선택지우기, 10M 단위로 Grid 그리기, 그룹선택 
             
             
             

@@ -1,0 +1,29 @@
+
+.map-info{
+    position: absolute;
+    display: flex;
+    Webkit-flex-flow: column;
+    flex-flow: column;
+    height: auto;
+    top: 60px;
+    right: 20px;
+    width: 235px;
+    border-radius: 6px;
+    padding: 10px 20px;
+    background: white;
+}
+
+.map-info > div {
+    font-size : 15px;
+    margin-bottom: 5px;
+}
+
+.map-info > div > img {
+    margin-right: 8px;
+    width: 18px
+}
+
+.map-info > div.address {
+    font-size : 17px;
+    vertical-align: bottom
+}
