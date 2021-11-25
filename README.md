@@ -57,8 +57,8 @@ D3를 이용한 이동형 선택 그래프 그림
 <p align="center">
 <a href src="./pds/tilebelt.pptx"/>
 
-<img src="./pds/tilebelt/tilebelt_1.png"/>
-<img src="./pds/tilebelt/tilebelt_2.png"/>
+<img src="./pds/tilebelt/tilebelt_s1.png"/>
+<img src="./pds/tilebelt/tilebelt_s2.png"/>
 </p>
 
 
